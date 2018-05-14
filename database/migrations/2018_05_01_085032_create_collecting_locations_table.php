@@ -14,13 +14,13 @@ class CreateCollectingLocationsTable extends Migration
     public function up()
     {
         Schema::create('collecting_locations', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('latitude',25)->nullable();
             $table->string('longitude',25)->nullable();
             $table->string('address',100)->nullable();
-            $table->bigInteger('collector_id')->unsigned();
+            $table->unsignedBigInteger('collector_id');
             $table->timestamps();
-            //$table->foreign('collector_id')->references('id')->on('collectors')->onDelete('cascade');
+            $table->foreign('collector_id')->references('id')->on('collectors')->onDelete('cascade');
         });
     }
 

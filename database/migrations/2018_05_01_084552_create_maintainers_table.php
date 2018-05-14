@@ -14,12 +14,12 @@ class CreateMaintainersTable extends Migration
     public function up()
     {
         Schema::create('maintainers', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('name',100);
             $table->string('description');
-            $table->bigInteger('user_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
-           // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
 
         });

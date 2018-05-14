@@ -14,8 +14,13 @@ class CreateSellersTable extends Migration
     public function up()
     {
         Schema::create('sellers', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
+            $table->string('name');
+            $table->string('description');
+            $table->string('type');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             
         });
     }

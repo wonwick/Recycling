@@ -14,10 +14,10 @@ class CreateWastesTable extends Migration
     public function up()
     {
         Schema::create('wastes', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('catogory',45);
-            $table->bigInteger('wasteType')->unsigned();
-            $table->bigInteger('description')->unsigned();
+            $table->bigIncrements('id');
+            $table->string('category',45);
+            $table->unsignedBigInteger('wasteType');
+            $table->unsignedBigInteger('description');
             $table->timestamps();
         });
     }

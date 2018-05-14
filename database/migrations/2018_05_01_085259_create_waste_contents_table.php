@@ -14,7 +14,7 @@ class CreateWasteContentsTable extends Migration
     public function up()
     {
         Schema::create('waste_contents', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('content',100);
             $table->timestamps();
         });

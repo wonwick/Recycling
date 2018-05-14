@@ -13,14 +13,14 @@ class CreateCollectorsTable extends Migration
      */
     public function up() {
         Schema::create('collectors', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('name',45);
             $table->string('description',255);
             $table->integer('rating');
             $table->string('type',45);
-            $table->bigInteger('user_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
-           /* $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');*/
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
 
        

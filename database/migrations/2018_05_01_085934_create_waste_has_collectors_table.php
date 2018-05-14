@@ -14,12 +14,12 @@ class CreateWasteHasCollectorsTable extends Migration
     public function up()
     {
         Schema::create('waste_has_collectors', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('waste_id');
-            $table->string('collector_id');
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('waste_id');
+            $table->unsignedBigInteger('collector_id');
             $table->timestamps();
-           /* $table->foreign('collector_id')->references('id')->on('collectors')->onDelete('cascade');
-            $table->foreign('waste_id')->references('id')->on('waste')->onDelete('cascade');*/
+            $table->foreign('collector_id')->references('id')->on('collectors')->onDelete('cascade');
+            $table->foreign('waste_id')->references('id')->on('wastes')->onDelete('cascade');
         });
     }
 

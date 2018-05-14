@@ -14,11 +14,11 @@ class CreatePicturesTable extends Migration
     public function up()
     {
         Schema::create('pictures', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('url',255);
-            $table->bigInteger('post_id')->unsigned();
+            $table->unsignedBigInteger('post_id');
             $table->timestamps();
-           // $table->foreign('post_id')->references('id')->on('post')->onDelete('cascade');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
         });
     }
 
