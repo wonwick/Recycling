@@ -15,7 +15,13 @@ class CreateWasteHasWasteContentsTable extends Migration
     {
         Schema::create('waste_has_waste_contents', function (Blueprint $table) {
             $table->increments('id');
+            $table->bigInteger('waste_id')->unsigned();
+            $table->bigInteger('wasteContent_id')->unsigned();
             $table->timestamps();
+          /*  $table->foreign('waste_id')->references('id')->on('wastes')->onDelete('cascade');
+            $table->foreign('wasteContent_id')->references('id')->on('waste_contents')->onDelete('cascade');*/
+
+
         });
     }
 

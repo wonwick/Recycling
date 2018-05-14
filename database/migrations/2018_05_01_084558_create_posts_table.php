@@ -15,13 +15,17 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title',100);
+            $table->string('content',500);
+            $table->bigInteger('maintainer_id')->unsigned();
             $table->timestamps();
+           // $table->foreign('maintainer_id')->references('id')->on('maintainers')->onDelete('cascade');
         });
     }
 
     /**
      * Reverse the migrations.
-     *
+     *t
      * @return void
      */
     public function down()

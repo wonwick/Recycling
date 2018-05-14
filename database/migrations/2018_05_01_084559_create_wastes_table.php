@@ -15,6 +15,9 @@ class CreateWastesTable extends Migration
     {
         Schema::create('wastes', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('catogory',45);
+            $table->bigInteger('wasteType')->unsigned();
+            $table->bigInteger('description')->unsigned();
             $table->timestamps();
         });
     }

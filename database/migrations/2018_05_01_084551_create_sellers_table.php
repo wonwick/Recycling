@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCollectorsTable extends Migration
+class CreateSellersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateCollectorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('collectors', function (Blueprint $table) {
+        Schema::create('sellers', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            
         });
     }
 
@@ -26,6 +27,6 @@ class CreateCollectorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('collectors');
+        Schema::dropIfExists('sellers');
     }
 }

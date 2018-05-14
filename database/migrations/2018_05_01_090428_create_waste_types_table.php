@@ -15,6 +15,7 @@ class CreateWasteTypesTable extends Migration
     {
         Schema::create('waste_types', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('type',45);
             $table->timestamps();
         });
     }
