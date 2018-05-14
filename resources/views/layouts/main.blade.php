@@ -21,7 +21,7 @@
 
      </div>
 
-    <div id="mbody">
+    <div id="body">
         @yield('content')
     </div>
 
