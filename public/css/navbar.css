@@ -2,4 +2,21 @@
     font-family: "Times New Roman";
     font-style: italic;
     color: #0c5460;
+    
+}
+.nav-item{
+    font-family: ubuntu;
+    font-weight: bold;
+}
+.herotext span {
+    position:    absolute;
+    bottom:      20px;
+    font-family: 'museo_slab500';
+    font-size:   150%;
+    color:       #fff;
+    padding:     0 20px;
+    width:       40%;
+    line-height: 150%;
+    background:  rgb(0, 0, 0);
+    background:  rgba(0, 0, 0, 0.7);
 }

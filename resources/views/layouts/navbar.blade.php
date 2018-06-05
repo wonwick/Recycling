@@ -1,19 +1,31 @@
 <link rel="stylesheet" href="/css/navbar.css">
 
+<nav class="navbar navbar-expand-sm bg-success navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Logo</a>
 
-<nav class="navbar navbar-light bg-light justify-content-between">
-  <a class="navbar-brand col-md-2">Cycle Me Back</a>
-  <form class="form-inline col-md-5">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
-  <ul class="nav">
-    <li class="nav-item">
-      <a class="nav-link" href="{{ route('login') }}">Login</a>
+  <!-- Links -->
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">What to do with </a>
+      <div class="dropdown-menu bg-success">
+        <a class="dropdown-item" href="#">Popular Items</a>
+        <a class="dropdown-item" href="#">Electrical Items</a>
+        <a class="dropdown-item" href="#">Plastic Bottles</a>
+      </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('register') }}">Register</a>
+      <a class="nav-link" href="#">About Us</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">News</a>
+    </li>
+
 
   </ul>
+  <ul class="navbar-nav mr">
+  <li class="nav-item">
+      <a class="nav-link" href="#">Sign in</a>
+    </li>
+    <ul>
 </nav>
